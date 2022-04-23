@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" />
+    <title>📎️</title>
+    <link rel="stylesheet" href="txt/txt.css">
+</head>
+
+<body>
+    <div>
+        ▶ new❪<input type="text" name="filename">❫
+        <button id="new"> →</button>
+    </div>
+    <div>
+        ▶ <span class="red">×</span><button id="delete">delete</button>
+    </div>
+    <div>
+        ▶ <span class="yellow">↑</span><button id="export">export</button>
+        ▶ <span class="yellow">↯</span><button id="import">import <input type="file" id="file-selector" accept="application/json" name="import"></button>
+    </div>
+
+    <main>
+        <ul class="tabs ">
+        </ul>
+
+        <pre contenteditable></pre>
+    </main>
+
+
+    <div id="notification" hidden></div>
+
+    <script type="text/javascript" src="txt/notif.js"> </script>
+    <script type="text/javascript" src="txt/txt.js"> </script>
+    <script type="text/javascript" src="txt/nav.js"> </script>
+    <script type="text/javascript" src="txt/keys.js"> </script>
+    <script type="text/javascript" src="txt/favicon.js"> </script>
+    <script type="text/javascript" src="txt/export.js"> </script>
+</body>
+
+</html>

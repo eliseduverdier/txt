@@ -1,0 +1,116 @@
+:root {
+    --primary: rgb(211, 211, 211);
+    --accent: rgb(9, 140, 5);
+    --accent-txt: #d7c004;
+    --bg: #222;
+    --red: rgb(185, 7, 7);
+}
+
+/************************
+ *   COLORS             *
+*************************/
+body,
+button,
+input {
+    font: normal 14px 'JetBrains Mono', monospace;
+    color: var(--primary);
+    background: var(--bg);
+}
+
+input, button { border: 0; }
+
+input { background-color: var(--accent-txt); color: var(--bg); }
+
+pre { padding: 2vh 4vh; height: 80%; white-space: pre; overflow: scroll; }
+@media (min-width: 800px) {/* desktop */
+    pre {border-top: 3px solid var(--accent-txt);}
+}
+pre:focus, input:focus { outline: 0 }
+
+.yellow, button#export:hover { color: var(--accent-txt); }
+.green, button#new:hover { color: var(--accent); }
+.red, button#delete:hover { color: var(--red); }
+
+
+/************************
+ *   LAYOUT/MENU        *
+*************************/
+@media (max-width: 800px) { /* mobile */
+  ul.tabs {
+    max-height: 100px;
+    overflow: scroll;
+    border-top: 3px solid var(--accent-txt);
+    border-bottom: 3px solid var(--accent-txt);
+    padding: 10px;
+    margin: 5px;
+  }
+  ul.tabs li {
+    display: inline;
+    padding: 10px;
+
+  }
+  ul.tabs:after{
+    content: ' ↬ ';
+    position: absolute;
+    right: 0;
+    font-size: 3em;
+    color: var(--accent-txt);
+    font-weight: bold;
+    top: 64px;
+  }
+}
+@media (min-width: 800px) { /* desktop */
+    main {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        margin-top: 20px;
+    }
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 5px 10px;
+}
+li:hover {
+    cursor: pointer;
+    opacity: .8;
+}li:hover, li.active {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+
+/*****************
+ *   NOTIFS      *
+******************/
+div#notification[hidden] {
+    display: block;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+div#notification {
+    bottom:0;
+    right:0;
+    position:absolute;
+    background-color:
+    var(--accent-txt);
+    color: var(--bg);
+    padding: 10px;
+}
+
+/*****************
+ *   ACTIONS      *
+******************/
+button#import input {
+    display: none;
+}
+
+button#import:hover input {
+    display: inline;
+}
